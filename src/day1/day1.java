@@ -4,18 +4,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class driver {
+public class day1 {
     public static void main(String[] args) {
         List<Integer> inputs = new ArrayList<>();
 
-        // get filepath for the puzzle input
-        System.out.print("Please provide the filepath of the text document containing the puzzle input: ");
-        String filePath = new Scanner(System.in).nextLine();
-
         try {
-            for (String line : Files.readAllLines(Paths.get(filePath))) {
+            for (String line : Files.readAllLines(Paths.get(day1.class.getResource("puzzleinput.txt").toURI()))) {
                 inputs.add(Integer.parseInt(line));
             }
         } catch (Exception ex) {
